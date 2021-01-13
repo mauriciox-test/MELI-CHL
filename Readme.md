@@ -1,15 +1,15 @@
 <INDEX>
-    <A. EL CHALLENGE>
-    <B. DESCRIPCION DE LA APP REALIZADA> 
-        <B.1 Entendiendo el problema...>
-        <B.2 Elementos para el desarrollo de la solucion>
-        <B.3 Entorno de trabajo>
-        <B.4 Configuracion inicial>
-        <B.5 Manual de usr>
-            <1 Estructura del repositorio>
-            <2 Instrucciones recomendadas>
-    <C. DESCRIPCION DE LA APP REALIZADA>
-    <D. PROBLEMAS ENCONTRADOS>
+<A. EL CHALLENGE>
+<B. DESCRIPCION DE LA APP REALIZADA> 
+<B.1 Entendiendo el problema...>
+<B.2 Elementos para el desarrollo de la solucion>
+<B.3 Entorno de trabajo>
+<B.4 Configuracion inicial>
+<B.5 Manual de usr>
+<1 Estructura del repositorio>
+<2 Instrucciones recomendadas>
+<C. DESCRIPCION DE LA APP REALIZADA>
+<D. PROBLEMAS ENCONTRADOS>
 
 <A. EL CHALLENGE>
 Caso - Redis API
