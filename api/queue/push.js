@@ -5,15 +5,15 @@ const router = express.Router();
 const {get,set,getList,del} = require('../../models/redis.js');
 
 /*PUSH*/
-router.get('/', async (req, res) => {//se declaran variables: req para recibir, res para responder, next para el siguiente 
+router.post('/', async (req, res) => {//se declaran variables: req para recibir, res para responder, next para el siguiente. Al realizar cambio de GET por POST, ya no se hace la referencia al req.query sino req.body 
 
-    console.error(req.query.name)
-    console.error(req.query.desc)
+    console.error(req.body.name)
+    console.error(req.body.desc)
 
     var status = 200;
-    if(typeof req.query.name  === 'string'){
+    if(typeof req.body.name  === 'string'){
 
-        var message = await set(req.query.name,req.query.desc).catch((err) => {
+        var message = await set(req.body.name,req.body.desc).catch((err) => {
             if (err) console.error(err)
         });
 

@@ -9,7 +9,7 @@ const push = require('./api/queue/push');
 const get = require('./api/queue/count');
 const bodyParser = require('body-parser');//accesar a la información del cuerpo de peticiones
 
-app.use(bodyParser.urlencoded({extended: false}));//analiza el texto como datos de URL codificada (que es como navegadores tienden a enviar datos de formulario de formas regulares SET para POST) y expone el objeto resultante (que contiene las claves y valores)
+app.use(bodyParser.urlencoded({extended: true}));//analiza el texto como datos de URL codificada (que es como navegadores tienden a enviar datos de formulario de formas regulares SET para POST) y expone el objeto resultante (que contiene las claves y valores). Se cambia parametro false por true.
 app.use(bodyParser.json());//basicamente le dice al sistema que quiere usar un json
 
 //configuracion inicial del server

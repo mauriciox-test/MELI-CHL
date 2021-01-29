@@ -5,10 +5,9 @@
 <B.2 Elementos para el desarrollo de la solucion>
 <B.3 Entorno de trabajo>
 <B.4 Configuracion inicial>
-<B.5 Manual de usr>
+<C. MANUAL DE USR>
 <1 Estructura del repositorio>
 <2 Instrucciones recomendadas>
-<C. DESCRIPCION DE LA APP REALIZADA>
 <D. PROBLEMAS ENCONTRADOS>
 
 <A. EL CHALLENGE>
@@ -100,8 +99,6 @@ Lo primero que hice fue investigar el funcionamiento de colas a traves de divers
 
 Adicionalmente estuve indagando en como podria mostrar la informacion de la forma mas facil.
 
-
-
 Refrescar lo basico requerido:
 Pop=sacar elemento de la cola
 Push=meter elemento a la cola
@@ -114,6 +111,14 @@ https://www.youtube.com/watch?v=mM_SROJZGwQ&t=311s
 https://gamedevelopment.tutsplus.com/es/tutorials/how-to-implement-and-use-a-message-queue-in-your-game--cms-25407
 https://progexpertos.com/q/107564/redis-queue-rq-task-queues-in-production
 https://geekflare.com/es/queuing-systems-for-backend-developers/
+
+<X. ¡NUEVO! -> Ajustes a la version para usar POST en vez de GET>
+https://grokonez.com/node-js/nodejs-restapis-how-to-create-nodejs-express-restapis-post-get-put-delete-requests
+https://riptutorial.com/node-js/example/21747/handling-post-requests
+https://riptutorial.com/node-js/example/20967/post-api-using-express
+https://www.toolsqa.com/postman/post-request-in-postman/
+https://www.codota.com/code/javascript/functions/express/Router/post
+
 
 <B.2 Elementos para el desarrollo de la solucion>
 A continuacion describo porque elegi cada elemento para armar el sistema:
@@ -203,8 +208,8 @@ http://ualmtorres.github.io/howtos/RedisNodeJS/
 deep dive into queues nodejs
 https://blog.logrocket.com/a-deep-dive-into-queues-in-node-js/
 
-<B.5 Manual de usr>
-Ahora opte por ordenar todo utilizando lo recomendado en un articulo acerca de la arquitectura, luego detecté qué era necesario para conectar nodejs con redis segun los articulos a continuacion:
+
+Ahora opté por ordenar todo utilizando lo recomendado en un articulo acerca de la arquitectura, luego detecté qué era necesario para conectar nodejs con redis segun los articulos a continuacion:
 
 Definiendo la Arquitectura de la solucion
 https://soshace.com/how-to-architect-a-node-js-project-from-ground-up/
@@ -216,7 +221,7 @@ Para hacer la cuenta de items en redis desde nodejs
 https://stackoverflow.com/questions/18056518/number-of-items-in-redis-set
 https://stackoverflow.com/questions/33618849/how-can-i-get-the-count-of-keys-in-redis
 
-
+<C. Manual de usr>
 <1 Estructura del repositorio>
 
 >node js //root
@@ -236,7 +241,7 @@ b. Abrir consola y posicionarse en directorio donde se descomprimio la API
 c. Levantar servidor desde consola con comando "node server.js" (Ver en .docx "levantar server" )
 d. En otra consola, levantar la BD en redis (Ver en .docx "levantar BD" )
 e. Desde postman, ejecutar las peticiones POP, PUSH y  COUNT segun corresponda. (ver en .docx COUNT, PUSH, POP  respectivamente) 
-
+f. Para el PUSH Y POP al utilizarse ahora el metodo POST, las consultas se deben cargar mendiante el body en x-www-form-urlencoded o raw(JSON)
 
 <D. PROBLEMAS ENCONTRADOS>
     Basicamente TODO a raiz que es el primer desarrollo que hago.
@@ -246,4 +251,6 @@ e. Desde postman, ejecutar las peticiones POP, PUSH y  COUNT segun corresponda. 
     Dado que contaba con poco tiempo y no sabia como generar la interfaz para mostrar la informacion, resolvi utilizar el postman para ahorrar tiempo.
 
     Cuando estuve haciendo la prueba para enviar por mail el zip, me dí cuenta que GMAIL lo bloqueaba por el contenido de los archivos. Entonces podia compartirles un sitio de mi DRIVE, pero resolví intentar el uso de Git y Github. Cuando generé el origin para subir la info a github, nombré el destino erroneamente y no me dejaba cargar la info. Tiempo despues (al dia siguiente), pude encontrar otro tutorial donde resolvia el tema de corregir la url.
+
+    Para la version 2 el cambio del metodo GET por POST en el codigo no supuso mayores modificaciones al codigo; la dificultad la tuve en el postman puesto que no lograba hacer que generara el formulario para que los valores no se cargaran en la URL (asi como en el metodo GET). Al final pudo funcionar haciendolo a traves de JSON o el x-www-form-urlencoded.
 

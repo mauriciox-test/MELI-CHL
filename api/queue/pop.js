@@ -6,11 +6,11 @@ const router = express.Router();
 const {get,set,getList,del} = require('../../models/redis.js');//declaro constantes necesarias referenciadas en el redis.js
 
 /* GET*/
-router.get('/', async (req, res) => {//se declaran variables: req para recibir, res para responder, next para el siguiente 
-    console.error(req.query.id)
+router.post('/', async (req, res) => {//se declaran variables: req para recibir, res para responder, next para el siguiente. Se Modifica el metodo GET por POST
+    console.error(req.body.id)
 
     var status = 200;
-    var message = await del(req.query.id).catch((err) => {//como es asincrono el tema la funcion aguarda para agarrar la variable y en funcion de eso sigue el siguiente comportamiento
+    var message = await del(req.body.id).catch((err) => {//como es asincrono el tema la funcion aguarda para agarrar la variable y en funcion de eso sigue el siguiente comportamiento. Al realizar cambio de GET por POST, ya no se hace la referencia al req.query sino req.body 
         if (err) console.error(err)
     });
 
